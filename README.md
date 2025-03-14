@@ -13,7 +13,7 @@ SELECT * FROM orders;
 ![](https://github.com/ArthurTen/DB_Labs_Ten/blob/main/Lab%201/2.PNG?raw=true)
 
 ```
-SELECT * FROM orders WHERE status IN ('cancelled','in_progress','delivery')
+SELECT * FROM orders WHERE status IN ('cancelled','in_progress','delivery');
 ```
 ### Задание №3
 Выберите из таблицы orders все новые и отмененные заказы. У отмененных заказов status равен "cancelled". У новых заказов status равен "new"
@@ -21,7 +21,7 @@ SELECT * FROM orders WHERE status IN ('cancelled','in_progress','delivery')
 ![](https://github.com/ArthurTen/DB_Labs_Ten/blob/main/Lab%201/3.PNG?raw=true)
 
 ```
-SELECT * FROM orders WHERE status = 'new' OR status = 'cancelled'
+SELECT * FROM orders WHERE status IN ('new', 'cancelled');
 ```
 ### Задание №4
 Выберите из таблицы orders все заказы содержащие более 3 товаров (products_count).
@@ -30,7 +30,7 @@ SELECT * FROM orders WHERE status = 'new' OR status = 'cancelled'
 ![](https://github.com/ArthurTen/DB_Labs_Ten/blob/main/Lab%201/4.PNG?raw=true)
 
 ```
-SELECT id,sum FROM orders WHERE products_count > 3
+SELECT user_id, sum FROM orders WHERE products_count > 3;
 ```
 ## Лабораторная работа №2 [22.02.2025]
 ### Задание №161
@@ -45,7 +45,7 @@ SELECT id,sum FROM orders WHERE products_count > 3
 ![](https://github.com/ArthurTen/DB_Labs_Ten/blob/main/Lab%202/161/1.PNG?raw=true)
 
 ```
-select * from orders where status in('new','in_progress','delivery') order by sum desc limit 3;
+select * from orders id where sum < 3000 and status != ('cancelled') order by sum desc limit 10 offset 3;
 ```
 2) Выберите из таблицы orders 2 самых дорогих заказов за всё время.
 Данные нужно отсортировать в порядке убывания цены.
@@ -54,7 +54,7 @@ select * from orders where status in('new','in_progress','delivery') order by su
 ![](https://github.com/ArthurTen/DB_Labs_Ten/blob/main/Lab%202/161/2.PNG?raw=true)
 
 ```
-select * from orders where status in('new','in_progress','delivery') order by sum desc limit 2;
+select * from orders where sum <=10000 and status != ('cancelled') order by sum desc limit 2;
 ```
 ### Задание №166
 #### Таблица
@@ -109,7 +109,7 @@ update products set name='PS5' where id=7;
 Создайте таблицу users с полем id типа INT и двумя текстовыми полями, которые будут хранить имя (first_name) и фамилию (last_name). Длина имени и фамилии не превышает 50 символов.
 Добавьте в таблицу трех пользователей: Дмитрия Иванова, Анатолия Белого и Дениса Давыдова.
 
-![](/LabW3/1.png)
+![](https://github.com/ArthurTen/Lab_3/blob/main/lab3/1.PNG?raw=true)
 
 ```
 CREATE TABLE users (
@@ -126,4 +126,4 @@ VALUES
 
 #### Результат:
 
-![](/LabW3/2.png)
+![](https://github.com/ArthurTen/Lab_3/blob/main/lab3/Table.PNG?raw=true)
