@@ -127,3 +127,64 @@ VALUES
 #### Результат:
 
 ![](https://github.com/ArthurTen/Lab_3/blob/main/lab3/Table.PNG?raw=true)
+
+##Лабораторная работа №4
+
+Задание 161
+![](https://github.com/ArthurTen/Lab_4/blob/main/lab4/161/1.PNG?raw=true)
+Таблица:
+![](https://github.com/ArthurTen/Lab_4/blob/main/lab4/161/Table1.PNG?raw=true)
+```
+SELECT * FROM orders WHERE STATUS != "cancelled" ORDER BY SUM DESC LIMIT 4;
+```
+Задание 162
+![](https://github.com/ArthurTen/Lab_4/blob/main/lab4/162/2.PNG?raw=true)
+Таблица:
+![](https://github.com/ArthurTen/Lab_4/blob/main/lab4/162/Table2.PNG?raw=true)
+```
+SELECT NAME, price FROM products where COUNT != 0 ORDER BY price ASC LIMIT 4;
+```
+Задание 163
+![](https://github.com/ArthurTen/Lab_4/blob/main/lab4/163/3.PNG?raw=true)
+Таблица:
+![](https://github.com/ArthurTen/Lab_4/blob/main/lab4/163/Table3.PNG?raw=true)
+```
+SELECT * FROM orders WHERE SUM >= 3200 ORDER BY DATE desc LIMIT 3;
+```
+Задания 4 и 5
+![](https://github.com/ArthurTen/Lab_4/blob/main/lab4/Task_4_5/4.PNG?raw=true)
+
+![](https://github.com/ArthurTen/Lab_4/blob/main/lab4/Task_4_5/5.PNG?raw=true)
+```
+select * from products order by price limit 10,5;
+```
+Таблица:
+![](https://github.com/ArthurTen/Lab_4/blob/main/lab4/Task_4_5/Table4.PNG?raw=true)
+```
+DROP TABLE IF EXISTS products;
+CREATE TABLE products (
+    id INT UNSIGNED NOT NULL,
+    name VARCHAR(255) NULL,
+    count INTEGER NULL,
+    price INTEGER NULL
+);
+INSERT INTO products (id, name, count, price)
+VALUES
+    (1, 'Стиральная машина', 5, 10000),
+    (2, 'Холодильник', 0, 10000),
+    (3, 'Микроволновка', 3, 4000),
+    (4, 'Пылесос', 2, 4500),
+    (5, 'Вентилятор', 0, 700),
+    (6, 'Телевизор', 7, 31740),
+    (7, 'Тостер', 2, 2500),
+    (8, 'Принтер', 4, 3000),
+    (9, 'Активные колонки', 1, 2900),
+    (10, 'Ноутбук', 4, 36990),
+    (11, 'Посудомоечная машина', 0, 17800),
+    (12, 'Видеорегистратор', 23, 4000),
+    (13, 'Смартфон', 8, 12300),
+    (14, 'Флешка', 4, 1400),
+    (15, 'Блендер', 0, 5500),
+    (16, 'Газовая плита', 5, 11900),
+    (17, 'Клавиатура', 3, 1800);
+```
