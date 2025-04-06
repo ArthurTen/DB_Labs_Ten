@@ -157,6 +157,7 @@ SELECT NAME, price FROM products where COUNT != 0 ORDER BY price ASC LIMIT 4;
 ![](https://github.com/ArthurTen/Lab_4/blob/main/lab4/163/3.PNG?raw=true)
 
 Таблица:
+
 ![](https://github.com/ArthurTen/Lab_4/blob/main/lab4/163/Table3.PNG?raw=true)
 
 ```
