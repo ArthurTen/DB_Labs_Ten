@@ -206,3 +206,62 @@ VALUES
     (16, 'Газовая плита', 5, 11900),
     (17, 'Клавиатура', 3, 1800);
 ```
+
+## Лабораторная работа №5
+
+Задание 1
+
+![](https://github.com/ArthurTen/Lab_5/blob/main/Lab5/t1/1.PNG?raw=true)
+
+```
+Create table articles (
+id int unsigned not null,
+name varchar (80),
+text text,
+state enum('draft', 'correction', 'public')
+);
+insert into articles (id, name, text, state)
+VALUES
+(1, 'Новое в Python 3.6', '', 'draft'),
+(2, 'Оптимизация SQL запросов', 'При больших объемах данных ...', 'correction'),
+(3, 'Транзакции в MySQL', 'По долгу службы мне приходится ...', 'public')
+```
+
+Таблица:
+
+![](https://github.com/ArthurTen/Lab_5/blob/main/Lab5/t1/Table_1.PNG?raw=true)
+
+Задание 2
+
+![](https://github.com/ArthurTen/Lab_5/blob/main/Lab5/t2/2.PNG?raw=true)
+
+```
+create table rooms (
+id int unsigned not null,
+number tinyint unsigned not null,
+beds enum('1+1','2+1','2+2') not null,
+additional set('conditioner','bar','fridge','wifi')
+);
+insert into rooms (id,number,beds,additional)
+values
+(1,10,'1+1','conditioner,bar,wifi'),
+(2,12,'2+1',''),
+(3,24,'2+2','fridge,bar,wifi')
+```
+
+Таблица:
+
+![](https://github.com/ArthurTen/Lab_5/blob/main/Lab5/t2/Table_2.PNG?raw=true)
+
+Задание 3
+
+![](https://github.com/ArthurTen/Lab_5/blob/main/Lab5/t3%20(214)/3.PNG?raw=true)
+
+```
+SELECT name,price,country FROM products 
+WHERE (find_in_set ('RU',country) OR find_in_set ('BY',country)) AND category_id IS NOT NULL ORDER BY price DESC
+
+```
+Таблица:
+
+![](https://github.com/ArthurTen/Lab_5/blob/main/Lab5/t3%20(214)/Table_3.PNG?raw=true)
